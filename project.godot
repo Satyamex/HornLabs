@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=680
 window/size/viewport_height=420
 
+[filesystem]
+
+import/blender/enabled=false
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

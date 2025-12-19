@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bckngohktt37x"]
+
+[ext_resource type="Texture2D" uid="uid://cmt2s64fnk8hd" path="res://textures/prototype_textures.svg" id="1_g85d6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fagpt"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_g85d6"]
+sky_material = SubResource("ProceduralSkyMaterial_fagpt")
+
+[sub_resource type="Environment" id="Environment_nsj2l"]
+background_mode = 2
+sky = SubResource("Sky_g85d6")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nsj2l"]
+albedo_texture = ExtResource("1_g85d6")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g85d6"]
+albedo_texture = ExtResource("1_g85d6")
+
+[node name="stage" type="Node3D"]
+
+[node name="sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="environment_suite" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nsj2l")
+
+[node name="level" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="floor" type="CSGBox3D" parent="level"]
+size = Vector3(32, 0.001, 32)
+material = SubResource("StandardMaterial3D_nsj2l")
+
+[node name="box1" type="CSGBox3D" parent="level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -9)
+material = SubResource("StandardMaterial3D_g85d6")
+
+[node name="box2" type="CSGBox3D" parent="level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -9)
+size = Vector3(3, 2, 3)
+material = SubResource("StandardMaterial3D_g85d6")
+
+[node name="box3" type="CSGBox3D" parent="level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.5, -9)
+size = Vector3(4, 3, 4)
+material = SubResource("StandardMaterial3D_g85d6")
