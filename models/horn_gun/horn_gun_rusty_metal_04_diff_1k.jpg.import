@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqt1xm4ltwxfj"
 path.s3tc="res://.godot/imported/horn_gun_rusty_metal_04_diff_1k.jpg-ec135ec1c254275b99b189fff09fcac1.s3tc.ctex"
+path.etc2="res://.godot/imported/horn_gun_rusty_metal_04_diff_1k.jpg-ec135ec1c254275b99b189fff09fcac1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://models/horn_gun/horn_gun_rusty_metal_04_diff_1k.jpg"
-dest_files=["res://.godot/imported/horn_gun_rusty_metal_04_diff_1k.jpg-ec135ec1c254275b99b189fff09fcac1.s3tc.ctex"]
+dest_files=["res://.godot/imported/horn_gun_rusty_metal_04_diff_1k.jpg-ec135ec1c254275b99b189fff09fcac1.s3tc.ctex", "res://.godot/imported/horn_gun_rusty_metal_04_diff_1k.jpg-ec135ec1c254275b99b189fff09fcac1.etc2.ctex"]
 
 [params]
 

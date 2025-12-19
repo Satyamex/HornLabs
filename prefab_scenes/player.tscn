@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8q84qg7hcj0e"]
+
+[ext_resource type="Script" uid="uid://chyveyklkvm7f" path="res://prefab_scripts/player_controller.gd" id="1_dc86y"]
+[ext_resource type="Shader" uid="uid://bsg8atcprfk7i" path="res://shaders/psx.gdshader" id="2_xo1h1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fxbtr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t3daw"]
+shader = ExtResource("2_xo1h1")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dc86y"]
+lightmap_size_hint = Vector2i(7, 7)
+size = Vector2(680, 420)
+center_offset = Vector3(340, 210, 0)
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_dc86y")
+
+[node name="collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fxbtr")
+
+[node name="cam_anchor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85047996, 0)
+
+[node name="cam" type="Camera3D" parent="cam_anchor"]
+
+[node name="psx_shader" type="MeshInstance2D" parent="cam_anchor/cam"]
+material = SubResource("ShaderMaterial_t3daw")
+mesh = SubResource("QuadMesh_dc86y")
