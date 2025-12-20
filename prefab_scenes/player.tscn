@@ -137,7 +137,34 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hyqds")
 
-[sub_resource type="Animation" id="Animation_t3daw"]
+[sub_resource type="Animation" id="Animation_nqlep"]
+resource_name = "pickup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cam_anchor/GunHolder:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.03635913, -0.8187935, -1.5502911), Vector3(0.201348, -0.35351026, -0.52806675)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cam_anchor/GunHolder:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_2ju3q"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -149,28 +176,25 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.008723438, -0.35351026, -1.6439829)]
+"values": [Vector3(0.201348, -0.35351026, -0.52806675)]
 }
-
-[sub_resource type="Animation" id="Animation_xo1h1"]
-resource_name = "pickup"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("cam_anchor/GunHolder:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333333),
-"transitions": PackedFloat32Array(1, 1),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cam_anchor/GunHolder:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.008723438, -0.35351026, -1.6439829), Vector3(0.7710322, 0.35319942, -0.7027552)]
+"values": [Vector3(0, -3.1415925, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nqlep"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ah8x"]
 _data = {
-&"RESET": SubResource("Animation_t3daw"),
-&"pickup": SubResource("Animation_xo1h1")
+&"RESET": SubResource("Animation_2ju3q"),
+&"pickup": SubResource("Animation_nqlep")
 }
 
 [node name="player" type="CharacterBody3D"]
@@ -186,17 +210,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85047996, 0)
 
 [node name="psx_shader" type="MeshInstance2D" parent="cam_anchor/cam"]
 material = SubResource("ShaderMaterial_t3daw")
+position = Vector2(0, 2)
 mesh = SubResource("QuadMesh_dc86y")
 
 [node name="InteractRay" type="RayCast3D" parent="cam_anchor/cam"]
 target_position = Vector3(0, 0, -4)
 
+[node name="ColorRect" type="ColorRect" parent="cam_anchor/cam"]
+offset_left = 337.0
+offset_top = 209.0
+offset_right = 339.0
+offset_bottom = 211.0
+
 [node name="GunHolder" type="Node3D" parent="cam_anchor"]
-transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0.3, -0.008723438, -0.35351026, -1.6439829)
+transform = Transform3D(-0.3, 0, -4.5298744e-08, 0, 0.3, 0, 4.5298744e-08, 0, -0.3, 0.201348, -0.35351026, -0.52806675)
+visible = false
 script = ExtResource("3_t3daw")
 
 [node name="horn_gun" type="Node3D" parent="cam_anchor/GunHolder"]
-transform = Transform3D(0.097098, 0, -0.023916038, 0, 0.09999999, 0, 0.023916038, 0, 0.097098, 0.08949776, 0, 7.450581e-09)
+transform = Transform3D(0.3786822, 0, -0.09327256, 0, 0.39, 0, 0.09327256, 0, 0.3786822, -1.4546013, 0.2288822, 0.17834723)
 
 [node name="Empty" type="Node3D" parent="cam_anchor/GunHolder/horn_gun"]
 transform = Transform3D(-1.1920929e-07, 1, -5.9604645e-08, -0.013264626, -1.1920929e-07, -0.999912, -0.999912, -5.9604645e-08, 0.013264596, 0, 0, 0)
@@ -217,5 +249,5 @@ skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_nqlep")
+&"": SubResource("AnimationLibrary_7ah8x")
 }
