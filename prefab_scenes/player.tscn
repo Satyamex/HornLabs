@@ -15,6 +15,7 @@ lightmap_size_hint = Vector2i(7, 7)
 size = Vector2(680, 420)
 center_offset = Vector3(340, 210, 0)
 
+<<<<<<< Updated upstream
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4tig"]
 resource_name = "Material.001"
 cull_mode = 2
@@ -137,19 +138,67 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hyqds")
 
+=======
+>>>>>>> Stashed changes
 [sub_resource type="Animation" id="Animation_t3daw"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
+<<<<<<< Updated upstream
 tracks/0/path = NodePath("cam_anchor/GunHolder:position")
+=======
+tracks/0/path = NodePath("GunHolder:position")
+>>>>>>> Stashed changes
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+<<<<<<< Updated upstream
+=======
 "update": 0,
 "values": [Vector3(-0.008723438, -0.35351026, -1.6439829)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GunHolder:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.1415925, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xo1h1"]
+resource_name = "pickup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GunHolder:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.008723438, -0.35351026, -1.6439829), Vector3(0.7710322, 0.35319942, -0.7027552)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GunHolder:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.14, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+>>>>>>> Stashed changes
+"update": 0,
+"values": [Vector3(0, -3.1415925, 0), Vector3(6.2831855, -3.1415927, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_xo1h1"]
@@ -191,6 +240,7 @@ mesh = SubResource("QuadMesh_dc86y")
 [node name="InteractRay" type="RayCast3D" parent="cam_anchor/cam"]
 target_position = Vector3(0, 0, -4)
 
+<<<<<<< Updated upstream
 [node name="GunHolder" type="Node3D" parent="cam_anchor"]
 transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0.3, -0.008723438, -0.35351026, -1.6439829)
 script = ExtResource("3_t3daw")
@@ -214,6 +264,16 @@ skeleton = NodePath("")
 transform = Transform3D(0.22202498, 0, 0, 0, 0.17658976, 0, 0, 0, 1.6940268, 0, 0.7869968, 0)
 mesh = SubResource("ArrayMesh_s1vob")
 skeleton = NodePath("")
+=======
+[node name="ColorRect" type="ColorRect" parent="cam_anchor/cam"]
+offset_left = 329.0
+offset_top = 211.0
+offset_right = 331.0
+offset_bottom = 213.0
+
+[node name="GunHolder" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.008723438, -0.35351026, -1.6439829)
+>>>>>>> Stashed changes
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
