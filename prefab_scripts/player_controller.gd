@@ -2,10 +2,7 @@ extends CharacterBody3D
 
 @onready var cam_anchor: Node3D = $cam_anchor
 @onready var cam: Camera3D = $cam_anchor/cam
-@onready var gun_holder: Node3D = $GunHolder
-@onready var interact_ray: RayCast3D = $cam_anchor/cam/InteractRay
 
-var held_gun: RigidBody3D = null
 var cam_sens: float = 0.0025
 var game_paused: bool = false
 var jump_velocity: float
@@ -53,38 +50,3 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		game_paused = !game_paused
-
-	if Input.is_action_just_pressed("interact"):
-		try_pick_gun()
-
-	if Input.is_action_just_pressed("drop"):
-		drop_gun()
-
-
-func try_pick_gun():
-	if held_gun != null:
-		return
-
-	if interact_ray.is_colliding():
-		var body = interact_ray.get_collider()
-		if body is RigidBody3D:
-			pick_gun(body)
-
-func pick_gun(gun: RigidBody3D):
-	held_gun = gun
-	$AnimationPlayer.play("pickup")
-	gun.freeze = true
-	gun.linear_velocity = Vector3.ZERO
-	gun.angular_velocity = Vector3.ZERO
-	gun.reparent(gun_holder, true)
-	gun.transform = Transform3D.IDENTITY
-
-func drop_gun():
-	if held_gun == null:
-		return
-	var gun = held_gun
-	held_gun = null
-	gun.reparent(get_tree().current_scene)
-	gun.global_position = gun_holder.global_position
-	gun.freeze = false
-	gun.apply_impulse(-transform.basis.z * 2.5)

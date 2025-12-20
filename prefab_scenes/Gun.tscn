@@ -1,17 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6i0xvqyqpqfh"]
+[gd_scene load_steps=3 format=3 uid="uid://b6i0xvqyqpqfh"]
 
-[ext_resource type="Script" uid="uid://de8cjwe25tpq" path="res://prefab_scripts/gun.gd" id="1_qo4pi"]
 [ext_resource type="PackedScene" uid="uid://bny2t5fl018ks" path="res://models/horn_gun/horn_gun.glb" id="1_r38ng"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_qo4pi"]
-size = Vector3(0.16931152, 0.2746582, 0.88256836)
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvdrq"]
+size = Vector3(0.16308594, 0.20507813, 0.9038696)
 
-[node name="Gun" type="RigidBody3D"]
-script = ExtResource("1_qo4pi")
+[node name="gun" type="StaticBody3D" groups=["pickable"]]
 
-[node name="horn_gun" parent="." instance=ExtResource("1_r38ng")]
+[node name="mesh" parent="." instance=ExtResource("1_r38ng")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035339355, 0.07507324, 0.23596191)
-shape = SubResource("BoxShape3D_qo4pi")
+[node name="collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10911465, 0.24685669)
+shape = SubResource("BoxShape3D_vvdrq")
