@@ -1,15 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6i0xvqyqpqfh"]
+[gd_scene load_steps=5 format=3 uid="uid://b6i0xvqyqpqfh"]
 
-[ext_resource type="PackedScene" uid="uid://bny2t5fl018ks" path="res://models/horn_gun/horn_gun.glb" id="1_r38ng"]
+[ext_resource type="PackedScene" uid="uid://cbfqc1xssuxjc" path="res://models/viking_drinking_horn/scene.gltf" id="2_qo4pi"]
+[ext_resource type="AudioStream" uid="uid://bho0fcrhx1djx" path="res://Sounds/HighPitch.mp3" id="3_s0n4f"]
+[ext_resource type="AudioStream" uid="uid://cj3q6u4mlemx" path="res://Sounds/LowPitch.mp3" id="4_n8xn6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vvdrq"]
 size = Vector3(0.16308594, 0.20507813, 0.9038696)
 
 [node name="gun" type="StaticBody3D" groups=["pickable"]]
 
-[node name="mesh" parent="." instance=ExtResource("1_r38ng")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-
 [node name="collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10911465, 0.24685669)
 shape = SubResource("BoxShape3D_vvdrq")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_qo4pi")]
+transform = Transform3D(-0.4737554, 0, -13.126454, 0, 13.135, 0, 13.126454, 0, -0.4737554, 0.01077497, -0.096672624, 0.2545)
+
+[node name="HighPitch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_s0n4f")
+
+[node name="LowPitch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_n8xn6")

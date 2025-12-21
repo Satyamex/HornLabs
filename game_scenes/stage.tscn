@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bckngohktt37x"]
+[gd_scene load_steps=10 format=3 uid="uid://bckngohktt37x"]
 
 [ext_resource type="Texture2D" uid="uid://cmt2s64fnk8hd" path="res://textures/prototype_textures.svg" id="1_g85d6"]
 [ext_resource type="PackedScene" uid="uid://b6i0xvqyqpqfh" path="res://prefab_scenes/Gun.tscn" id="3_8ws2d"]
 [ext_resource type="PackedScene" uid="uid://c8q84qg7hcj0e" path="res://prefab_scenes/player.tscn" id="3_l643k"]
+[ext_resource type="PackedScene" uid="uid://d038h0omgiyr4" path="res://prefab_scenes/Box.tscn" id="4_l643k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fagpt"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -59,3 +60,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.397972, 0.14615647, -1.38
 
 [node name="player" parent="." instance=ExtResource("3_l643k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81816053, 1.0944911, 0.2842223)
+
+[node name="RigidBody3D" parent="." instance=ExtResource("4_l643k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.257099, 3.726726, -9.103483)

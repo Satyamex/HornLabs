@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d038h0omgiyr4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wu7ka"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_054ur"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="RigidBody3D" type="RigidBody3D" groups=["sound_reactive"]]
+gravity_scale = 0.0
+angular_damp = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_wu7ka")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_054ur")
