@@ -1,0 +1,11 @@
+Model Information:
+* title:	Game Ready Light
+* source:	https://sketchfab.com/3d-models/game-ready-light-e60afa049f7a469ea0e7ccf5b68bffa6
+* author:	Voidy Entertainment (https://sketchfab.com/VoidyAssets)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Game Ready Light" (https://sketchfab.com/3d-models/game-ready-light-e60afa049f7a469ea0e7ccf5b68bffa6) by Voidy Entertainment (https://sketchfab.com/VoidyAssets) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

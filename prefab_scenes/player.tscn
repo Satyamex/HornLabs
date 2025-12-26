@@ -1,11 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8q84qg7hcj0e"]
+[gd_scene load_steps=23 format=3 uid="uid://c8q84qg7hcj0e"]
 
 [ext_resource type="Script" uid="uid://chyveyklkvm7f" path="res://prefab_scripts/player_controller.gd" id="1_dc86y"]
 [ext_resource type="Shader" uid="uid://bsg8atcprfk7i" path="res://shaders/psx.gdshader" id="2_xo1h1"]
 [ext_resource type="Script" uid="uid://bonhmnjxoomx4" path="res://prefab_scripts/player_interaction.gd" id="3_t3daw"]
 [ext_resource type="PackedScene" uid="uid://cbfqc1xssuxjc" path="res://models/viking_drinking_horn/scene.gltf" id="5_2ju3q"]
 [ext_resource type="AudioStream" uid="uid://bho0fcrhx1djx" path="res://Sounds/HighPitch.mp3" id="5_7ah8x"]
+[ext_resource type="Shader" uid="uid://7fr5elncb46u" path="res://shaders/player.gdshader" id="5_vgixw"]
 [ext_resource type="AudioStream" uid="uid://cj3q6u4mlemx" path="res://Sounds/LowPitch.mp3" id="6_wc3t2"]
+[ext_resource type="AudioStream" uid="uid://dlb4wei5k2iu7" path="res://Sounds/running-6358.mp3" id="7_wc3t2"]
+[ext_resource type="FontFile" uid="uid://caqmo4jfbu48e" path="res://textures/Peaberry_Pixel_Font/Peaberry_Pixel_Font/Peaberry Monospace/PeaberryMono.otf" id="9_d0ayv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fxbtr"]
 
@@ -16,6 +19,22 @@ shader = ExtResource("2_xo1h1")
 lightmap_size_hint = Vector2i(7, 7)
 size = Vector2(680, 420)
 center_offset = Vector3(340, 210, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_wc3t2"]
+size = Vector2(0.52, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_d0ayv"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_21gda"]
+noise = SubResource("FastNoiseLite_d0ayv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lsfiu"]
+render_priority = 0
+shader = ExtResource("5_vgixw")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_21gda")
+shader_parameter/strength = 0.095
+shader_parameter/speed = 1.0
 
 [sub_resource type="Animation" id="Animation_2ju3q"]
 length = 0.001
@@ -155,11 +174,23 @@ offset_bottom = 211.0
 
 [node name="GunHolder" type="Node3D" parent="cam_anchor"]
 transform = Transform3D(-0.29999998, 0, -4.5298744e-08, 0, 0.3, 0, 4.5298737e-08, 0, -0.3, 0.201348, -0.35351026, -0.52806675)
-visible = false
 script = ExtResource("3_t3daw")
 
-[node name="Sketchfab_Scene" parent="cam_anchor/GunHolder" instance=ExtResource("5_2ju3q")]
+[node name="Sketchfab_Scene" parent="cam_anchor/GunHolder" groups=["pickable"] instance=ExtResource("5_2ju3q")]
 transform = Transform3D(-9.785065, 0, -41.448635, 0, 42.58799, 0, 41.448635, 0, -9.785065, -1.71895, -0.60837245, 0.99676657)
+
+[node name="Label" type="Label" parent="cam_anchor/GunHolder"]
+visible = false
+offset_left = 302.0
+offset_top = 177.0
+offset_right = 384.0
+offset_bottom = 200.0
+text = "\"E\" To Pick"
+
+[node name="Distortion" type="MeshInstance3D" parent="cam_anchor/GunHolder"]
+transform = Transform3D(-0.8971301, 0.18105128, 0.4029608, 0.16515599, 0.98347366, -0.07418252, -0.4097322, 2.733798e-08, -0.9122062, -1.8942513, 0.8777394, 1.9588555)
+mesh = SubResource("QuadMesh_wc3t2")
+surface_material_override/0 = SubResource("ShaderMaterial_lsfiu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -171,3 +202,70 @@ stream = ExtResource("5_7ah8x")
 
 [node name="LowPitch" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_wc3t2")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_wc3t2")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+self_modulate = Color(1, 1, 1, 0.81600004)
+layout_mode = 0
+offset_left = -22.0
+offset_top = -20.0
+offset_right = 697.0
+offset_bottom = 440.0
+color = Color(0.23874435, 0.23874438, 0.23874435, 1)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 33.0
+offset_right = 409.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("9_d0ayv")
+theme_override_font_sizes/font_size = 56
+text = "Pause"
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 399.0
+offset_right = 620.0
+offset_bottom = 459.0
+theme_override_fonts/font = ExtResource("9_d0ayv")
+theme_override_font_sizes/font_size = 16
+text = "*You can always use LEFT click or RIGHT click to oprate horn*"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 324.0
+offset_right = 394.0
+offset_bottom = 360.0
+text = "Exit"
+
+[node name="Button3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 224.0
+offset_right = 394.0
+offset_bottom = 260.0
+text = "Resume"
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 275.0
+offset_right = 407.0
+offset_bottom = 311.0
+text = "Windowed mode"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]

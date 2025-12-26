@@ -11,7 +11,10 @@ extends CharacterBody3D
 @export var throw_force := 18.0
 var pickup_blocked := false
 @export var pickup_block_time := 2.0
-
+@onready var distortion: MeshInstance3D = $cam_anchor/GunHolder/Distortion
+@onready var footsteps: AudioStreamPlayer = $Footsteps
+@export var step_interval := 0.45
+var step_timer := 0.0
 var cam_sens: float = 0.0025
 var game_paused: bool = false
 var jump_velocity: float
@@ -21,6 +24,8 @@ var acceleration: float = 100.0
 var deceleration: float = 10.0
 var moving: bool = false
 var held_body: RigidBody3D = null
+var pickable = true
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -31,14 +36,33 @@ func _unhandled_input(event: InputEvent) -> void:
 			cam_anchor.rotation.x = clamp(cam_anchor.rotation.x, deg_to_rad(-85), deg_to_rad(85))
 	if game_paused:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		$Control.show()
+		
+	if Input.is_action_just_pressed("move_forward"):
+		footsteps.play()
+	if Input.is_action_just_released("move_forward"):
+		footsteps.stop()
+	if Input.is_action_just_pressed("move_backward"):
+		footsteps.play()
+	if Input.is_action_just_released("move_backward"):
+		footsteps.stop()
+	if Input.is_action_just_pressed("move_left"):
+		footsteps.play()
+	if Input.is_action_just_released("move_left"):
+		footsteps.stop()
+	if Input.is_action_just_pressed("move_right"):
+		footsteps.play()
+	if Input.is_action_just_released("move_right"):
+		footsteps.stop()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump_velocity = jump_speed
 		velocity.y = jump_velocity
+		footsteps.stop()
 
 	var input_dir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction: Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -65,6 +89,11 @@ func _physics_process(delta: float) -> void:
 			_release_object()
 
 func _process(delta: float) -> void:
+	distortion.visible = Input.is_action_pressed("High")
+	distortion.visible = Input.is_action_pressed("low")
+	if gun_holder.visible:
+		pickable = false
+		
 	if Input.is_action_just_pressed("pause"):
 		game_paused = !game_paused
 
@@ -109,6 +138,8 @@ func _release_object():
 	held_body = null
 
 func _try_attract():
+	if pickable:
+		return
 	if pickup_blocked:
 		return
 	var body = ray.get_collider()
@@ -135,3 +166,19 @@ func _throw_object():
 	pickup_blocked = true
 	await get_tree().create_timer(pickup_block_time).timeout
 	pickup_blocked = false
+
+func _on_disable_body_entered(body: Node3D) -> void:
+	gun_holder.hide()
+
+func _on_button_pressed() -> void:
+	get_tree().quit()
+func _on_button_3_pressed() -> void:
+	$Control.hide()
+	game_paused = !game_paused
+
+func _on_button_2_pressed() -> void:
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_size(Vector2i(680, 420))
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwrjap0ol4l0c"]
+
+[ext_resource type="Script" uid="uid://wo1blup7vtv8" path="res://prefab_scripts/sound_pillers(LOW).gd" id="1_pmknj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2khgm"]
+size = Vector3(8.045, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pmknj"]
+albedo_color = Color(0.7476321, 0.32493103, 0, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ciwvq"]
+points = PackedVector3Array(4.0225, 0.5, 0.5, 4.0225, 0.5, -0.5, -4.0225, 0.5, 0.5, 4.0225, -0.5, 0.5, 4.0225, -0.5, -0.5, -4.0225, 0.5, -0.5, -4.0225, -0.5, 0.5, -4.0225, -0.5, -0.5)
+
+[node name="LOW" type="AnimatableBody3D"]
+script = ExtResource("1_pmknj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2khgm")
+surface_material_override/0 = SubResource("StandardMaterial3D_pmknj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ciwvq")

@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://cydvdim8lctty"
+path="res://.godot/imported/PeaberryMono.fnt-46f2742c3828aef16b90ccfe7aba6987.fontdata"
+
+[deps]
+
+source_file="res://textures/Peaberry_Pixel_Font/Peaberry_Pixel_Font/Peaberry Monospace/PeaberryMono.fnt"
+dest_files=["res://.godot/imported/PeaberryMono.fnt-46f2742c3828aef16b90ccfe7aba6987.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

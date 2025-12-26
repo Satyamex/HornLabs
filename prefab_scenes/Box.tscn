@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d038h0omgiyr4"]
+[gd_scene load_steps=4 format=3 uid="uid://d038h0omgiyr4"]
+
+[ext_resource type="PackedScene" uid="uid://cagjuxx080mcl" path="res://models/portal_companion_cube/scene.gltf" id="1_054ur"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wu7ka"]
 
@@ -10,7 +12,11 @@ gravity_scale = 0.0
 angular_damp = 10.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_wu7ka")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_054ur")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_054ur")]
+transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, -0.46788272)

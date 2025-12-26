@@ -1,22 +1,19 @@
-[gd_scene load_steps=54 format=4 uid="uid://bckngohktt37x"]
+[gd_scene load_steps=52 format=4 uid="uid://dv4231br33ff5"]
 
-[ext_resource type="Script" uid="uid://bh2uc8wysd8n5" path="res://game_scenes/stage.gd" id="1_5edqr"]
-[ext_resource type="Texture2D" uid="uid://dlm6hq1i0xx8h" path="res://textures/walltexture.jpgf8e1ee5c-aa56-40f9-986a-a583fbad830bRes200.webp" id="2_ppwnj"]
-[ext_resource type="PackedScene" uid="uid://b6i0xvqyqpqfh" path="res://prefab_scenes/Gun.tscn" id="3_8ws2d"]
-[ext_resource type="PackedScene" uid="uid://c8q84qg7hcj0e" path="res://prefab_scenes/player.tscn" id="3_l643k"]
-[ext_resource type="Texture2D" uid="uid://djf247cf7o7ca" path="res://textures/108-concrete-mosaico-tiles-pbr-texture-seamless.webp" id="4_wsfkm"]
-[ext_resource type="PackedScene" uid="uid://5mgrtttr3kuw" path="res://models/retro_lowpoly_toilet_ps1ps2_style/scene.gltf" id="5_a3d7a"]
-[ext_resource type="PackedScene" uid="uid://d2fe6gnw0n8gd" path="res://models/game_ready_light/scene.gltf" id="5_wsfkm"]
-[ext_resource type="PackedScene" uid="uid://22ixmopm8juc" path="res://models/old_abandoned_hospital_bed/scene.gltf" id="6_ppwnj"]
-[ext_resource type="PackedScene" uid="uid://cqsptxaadx7s6" path="res://models/psx_wooden_table/scene.gltf" id="7_cjyvk"]
-[ext_resource type="PackedScene" uid="uid://dgfpxc42dp5ik" path="res://models/psx_old_tv/scene.gltf" id="8_a3d7a"]
-[ext_resource type="Texture2D" uid="uid://dp1i5v5ykgwnw" path="res://models/sci_fi_door/textures/lambert1_baseColor.png" id="11_8hjps"]
-[ext_resource type="Texture2D" uid="uid://cdd1yksmbdovf" path="res://models/sci_fi_door/textures/lambert1_normal.png" id="12_qe2b8"]
-[ext_resource type="PackedScene" uid="uid://dp8jx2o4bc4as" path="res://models/button_-_from_portal_2_original/scene.gltf" id="13_qe2b8"]
-[ext_resource type="AudioStream" uid="uid://dyaufif1ewwl4" path="res://Sounds/door_open.mp3" id="14_emd3p"]
-[ext_resource type="AudioStream" uid="uid://dhm0aptr0n76c" path="res://Sounds/door_close.mp3" id="15_0ejo1"]
-[ext_resource type="AudioStream" uid="uid://da80wkphoydcp" path="res://Sounds/Fluorescent Light Humming - Sound Effect (HD).mp3" id="15_apjpw"]
-[ext_resource type="PackedScene" uid="uid://d038h0omgiyr4" path="res://prefab_scenes/Box.tscn" id="16_emd3p"]
+[ext_resource type="Script" uid="uid://bh2uc8wysd8n5" path="res://game_scenes/stage.gd" id="1_cbg5b"]
+[ext_resource type="PackedScene" uid="uid://b6i0xvqyqpqfh" path="res://prefab_scenes/Gun.tscn" id="2_ipi1s"]
+[ext_resource type="Texture2D" uid="uid://djf247cf7o7ca" path="res://textures/108-concrete-mosaico-tiles-pbr-texture-seamless.webp" id="4_d65c1"]
+[ext_resource type="Texture2D" uid="uid://dlm6hq1i0xx8h" path="res://textures/walltexture.jpgf8e1ee5c-aa56-40f9-986a-a583fbad830bRes200.webp" id="5_268ku"]
+[ext_resource type="PackedScene" uid="uid://5mgrtttr3kuw" path="res://models/retro_lowpoly_toilet_ps1ps2_style/scene.gltf" id="6_ttag8"]
+[ext_resource type="PackedScene" uid="uid://d2fe6gnw0n8gd" path="res://models/game_ready_light/scene.gltf" id="7_6u7qu"]
+[ext_resource type="PackedScene" uid="uid://22ixmopm8juc" path="res://models/old_abandoned_hospital_bed/scene.gltf" id="8_ye84s"]
+[ext_resource type="PackedScene" uid="uid://cqsptxaadx7s6" path="res://models/psx_wooden_table/scene.gltf" id="9_87ae5"]
+[ext_resource type="PackedScene" uid="uid://dgfpxc42dp5ik" path="res://models/psx_old_tv/scene.gltf" id="10_momxw"]
+[ext_resource type="AudioStream" uid="uid://da80wkphoydcp" path="res://Sounds/Fluorescent Light Humming - Sound Effect (HD).mp3" id="11_82cl2"]
+[ext_resource type="Texture2D" uid="uid://dp1i5v5ykgwnw" path="res://models/sci_fi_door/textures/lambert1_baseColor.png" id="12_yii6p"]
+[ext_resource type="Texture2D" uid="uid://cdd1yksmbdovf" path="res://models/sci_fi_door/textures/lambert1_normal.png" id="13_6snty"]
+[ext_resource type="PackedScene" uid="uid://dp8jx2o4bc4as" path="res://models/button_-_from_portal_2_original/scene.gltf" id="14_tgnpq"]
+[ext_resource type="PackedScene" uid="uid://d038h0omgiyr4" path="res://prefab_scenes/Box.tscn" id="15_lkcgj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fagpt"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -40,7 +37,7 @@ fog_height_density = -0.1
 fog_depth_curve = 0.40612644
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppwnj"]
-albedo_texture = ExtResource("4_wsfkm")
+albedo_texture = ExtResource("4_d65c1")
 uv1_scale = Vector3(0.2, 0.2, 0.2)
 uv1_triplanar = true
 
@@ -53,7 +50,7 @@ points = PackedVector3Array(-5, -0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, -0.5, 5,
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjyvk"]
 albedo_color = Color(0.39365935, 0.5326262, 0.56824505, 1)
-albedo_texture = ExtResource("4_wsfkm")
+albedo_texture = ExtResource("4_d65c1")
 uv1_scale = Vector3(-0.15, -0.15, -0.15)
 uv1_triplanar = true
 
@@ -65,7 +62,7 @@ size = Vector3(15, 1, 15)
 points = PackedVector3Array(-7.5, 0, -7.5, -7.5, 0, 7.499999, 7.499999, 0, -7.5, 7.499999, 0, 7.499999)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvp3b"]
-albedo_texture = ExtResource("2_ppwnj")
+albedo_texture = ExtResource("5_268ku")
 uv1_scale = Vector3(-0.515, -0.515, -0.515)
 uv1_triplanar = true
 
@@ -80,7 +77,7 @@ points = PackedVector3Array(-0.5, -3.85, -7.6075, 0.5, -3.85, -7.6075, -0.5, -3.
 points = PackedVector3Array(-0.5, -3.85, -7.6075, 0.5, -3.85, -7.6075, -0.5, -3.85, 7.6075, -0.5, 3.85, -7.6075, 0.5, 3.85, -7.6075, 0.5, -3.85, 7.6075, -0.5, 3.85, 7.6075, 0.5, 3.85, 7.6075)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hjps"]
-albedo_texture = ExtResource("2_ppwnj")
+albedo_texture = ExtResource("5_268ku")
 uv1_scale = Vector3(0.495, 0.495, 0.495)
 uv1_triplanar = true
 
@@ -93,11 +90,11 @@ size = Vector3(1.6099243, 0.7182617, 2.3015747)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hc3e7"]
 resource_name = "lambert1"
 cull_mode = 2
-albedo_texture = ExtResource("11_8hjps")
+albedo_texture = ExtResource("12_yii6p")
 emission_enabled = true
-emission_texture = ExtResource("11_8hjps")
+emission_texture = ExtResource("12_yii6p")
 normal_enabled = true
-normal_texture = ExtResource("12_qe2b8")
+normal_texture = ExtResource("13_6snty")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_43k4q"]
 _surfaces = [{
@@ -305,27 +302,82 @@ _data = {
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0ejo1"]
 height = 0.27978516
 
-[sub_resource type="TextMesh" id="TextMesh_apjpw"]
+[sub_resource type="Animation" id="Animation_cbg5b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-4.3782578, 1.2877439, 3.3381853)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, -1.5707964, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6q7ut"]
+resource_name = "cutscene"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8333334, 2.34, 4.87),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-4.3782578, 1.2877439, 3.3381853), Vector3(-3.8301182, 1.9535047, 3.3381853), Vector3(-3.8301182, 1.9535047, 3.3381853), Vector3(-3.8301182, 1.9535047, 3.3381853)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.8, 2.34, 3.25, 3.82, 4.46, 4.87),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, -1.5707964, 0), Vector3(0.08187343, -1.5707964, 4.3711385e-08), Vector3(0.08187343, -1.5707964, 4.3711385e-08), Vector3(0.08187342, -0.120096184, 4.371137e-08), Vector3(0.08187342, -0.120096184, 4.371137e-08), Vector3(0.08187344, -1.3558242, 4.28799e-08), Vector3(0.08187342, -0.124843396, 4.241752e-08)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ipi1s"]
+_data = {
+&"RESET": SubResource("Animation_cbg5b"),
+&"cutscene": SubResource("Animation_6q7ut")
+}
+
+[sub_resource type="TextMesh" id="TextMesh_6q7ut"]
 text = "00"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_emd3p"]
-size = Vector3(7.2455444, 1.7677002, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0ejo1"]
-size = Vector3(2.0566406, 1, 2.3348389)
-
 [node name="stage" type="Node3D"]
-script = ExtResource("1_5edqr")
+script = ExtResource("1_cbg5b")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="environment_suite" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_nsj2l")
 
-[node name="gun" parent="." instance=ExtResource("3_8ws2d")]
+[node name="gun" parent="." instance=ExtResource("2_ipi1s")]
 transform = Transform3D(-0.0006519824, 0.0041554063, -0.9999912, -0.9879139, -0.15500349, 0, -0.15500212, 0.9879052, 0.0042062434, -3.6172307, 1.4190577, -4.1249294)
-
-[node name="player" parent="." instance=ExtResource("3_l643k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8126326, 1.2395371, 2.6616714)
-pickup_speed = 15.0
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -335,24 +387,6 @@ mesh = SubResource("BoxMesh_ppwnj")
 [node name="StaticBody3D2" type="StaticBody3D" parent="Node3D/MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D/StaticBody3D2"]
-shape = SubResource("ConvexPolygonShape3D_87y5k")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.495926)
-mesh = SubResource("BoxMesh_ppwnj")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Node3D/MeshInstance3D4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D4/StaticBody3D2"]
-shape = SubResource("ConvexPolygonShape3D_87y5k")
-
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.131033, 10.495926)
-mesh = SubResource("BoxMesh_ppwnj")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Node3D/MeshInstance3D11"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D11/StaticBody3D2"]
 shape = SubResource("ConvexPolygonShape3D_87y5k")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D"]
@@ -382,24 +416,6 @@ mesh = SubResource("BoxMesh_wsfkm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_apjpw")
 
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.463669, 3.8640537, 14.766285)
-mesh = SubResource("BoxMesh_wsfkm")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/MeshInstance3D8"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D8/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_apjpw")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.511898, 3.8640537, 14.766285)
-mesh = SubResource("BoxMesh_wsfkm")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/MeshInstance3D9"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D9/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_apjpw")
-
 [node name="MeshInstance3D7" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.037, 3.863, 5.222)
 use_collision = true
@@ -422,16 +438,7 @@ mesh = SubResource("BoxMesh_wsfkm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D5/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_emd3p")
 
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.052834034, 3.8640537, 12.179842)
-mesh = SubResource("BoxMesh_wsfkm")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/MeshInstance3D10"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D10/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_emd3p")
-
-[node name="Sketchfab_Scene" parent="Node3D" instance=ExtResource("5_a3d7a")]
+[node name="Sketchfab_Scene" parent="Node3D" instance=ExtResource("6_ttag8")]
 transform = Transform3D(1.345, 0, 0, 0, 1.345, 0, 0, 0, 1.345, -2.482159, 0.49842077, -4.060512)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Node3D"]
@@ -441,13 +448,13 @@ light_energy = 6.111
 shadow_enabled = true
 omni_range = 12.599
 
-[node name="Sketchfab_Scene2" parent="Node3D" instance=ExtResource("5_wsfkm")]
+[node name="Sketchfab_Scene2" parent="Node3D" instance=ExtResource("7_6u7qu")]
 transform = Transform3D(1.765, 0, 0, 0, 1.765, 0, 0, 0, 1.765, -0.90569067, 6.4911613, -0.4230609)
 
-[node name="Sketchfab_Scene3" parent="Node3D" instance=ExtResource("5_wsfkm")]
+[node name="Sketchfab_Scene3" parent="Node3D" instance=ExtResource("7_6u7qu")]
 transform = Transform3D(1.765, 0, 0, 0, 1.765, 0, 0, 0, 1.765, -0.90569067, 6.4911613, 0.68275833)
 
-[node name="Sketchfab_Scene4" parent="Node3D" instance=ExtResource("6_ppwnj")]
+[node name="Sketchfab_Scene4" parent="Node3D" instance=ExtResource("8_ye84s")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.841406, 0.49527097, 3.6562424)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Sketchfab_Scene4"]
@@ -460,15 +467,15 @@ shape = SubResource("BoxShape3D_apjpw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.063633, 0.51478064, -7.4635363)
 shape = SubResource("BoxShape3D_apjpw")
 
-[node name="Sketchfab_Scene5" parent="Node3D" instance=ExtResource("7_cjyvk")]
+[node name="Sketchfab_Scene5" parent="Node3D" instance=ExtResource("9_87ae5")]
 transform = Transform3D(0.885, 0, 0, 0, 0.885, 0, 0, 0, 0.885, -3.8819141, 0.41576427, -4.162989)
 
-[node name="Sketchfab_Scene7" parent="Node3D" instance=ExtResource("8_a3d7a")]
+[node name="Sketchfab_Scene7" parent="Node3D" instance=ExtResource("10_momxw")]
 transform = Transform3D(-3.2652406e-07, 0, -7.47, 0, 7.47, 0, 7.47, 0, -3.2652406e-07, 6.372536, 1.6021593, -0.06456947)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5142381, 6.41323, 0)
-stream = ExtResource("15_apjpw")
+stream = ExtResource("11_82cl2")
 autoplay = true
 
 [node name="Sketchfab_Scene9" type="Node3D" parent="."]
@@ -513,13 +520,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_emd3p")
 }
 
-[node name="door_open" type="AudioStreamPlayer3D" parent="Sketchfab_Scene9"]
-stream = ExtResource("14_emd3p")
-
-[node name="door_close" type="AudioStreamPlayer3D" parent="Sketchfab_Scene9"]
-stream = ExtResource("15_0ejo1")
-
-[node name="Sketchfab_Scene10" parent="." instance=ExtResource("13_qe2b8")]
+[node name="Sketchfab_Scene10" parent="." instance=ExtResource("14_tgnpq")]
 transform = Transform3D(0.7277608, 0, 0.685831, 0, 1, 0, -0.685831, 0, 0.7277608, 1.6996331, 0.59101707, -3.3283172)
 
 [node name="Area3D" type="Area3D" parent="Sketchfab_Scene10"]
@@ -528,28 +529,23 @@ transform = Transform3D(0.7277608, 0, 0.685831, 0, 1, 0, -0.685831, 0, 0.7277608
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49172324, 0)
 shape = SubResource("CylinderShape3D_0ejo1")
 
-[node name="RigidBody3D" parent="." instance=ExtResource("16_emd3p")]
+[node name="RigidBody3D" parent="." instance=ExtResource("15_lkcgj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7848098, 1.0245204, -4.0924044)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.3711402e-08, -1, 4.3711374e-08, 0, -4.371139e-08, -0.9999997, 1.0000004, -4.371139e-08, 1.9106848e-15, -4.3782578, 1.2877439, 3.3381853)
+
+[node name="cutscene" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Camera3D")
+libraries = {
+&"": SubResource("AnimationLibrary_ipi1s")
+}
+autoplay = "cutscene"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-6.0343575e-07, 0, -13.805, 0, 13.805, 0, 13.805, 0, -6.0343575e-07, 4.7088366, 4.0153594, 0)
-mesh = SubResource("TextMesh_apjpw")
-
-[node name="end" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.612405)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="end"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32699585, 1.9589593, 1.0780735)
-shape = SubResource("BoxShape3D_emd3p")
-
-[node name="disable" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="disable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8613281, 1.8175552, 2.4334593)
-shape = SubResource("BoxShape3D_0ejo1")
+mesh = SubResource("TextMesh_6q7ut")
 
 [connection signal="body_entered" from="Sketchfab_Scene10/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Sketchfab_Scene10/Area3D" to="." method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="end" to="." method="_on_end_body_entered"]
-[connection signal="body_entered" from="disable" to="." method="_on_disable_body_entered"]
-[connection signal="body_entered" from="disable" to="player" method="_on_disable_body_entered"]
+[connection signal="animation_finished" from="cutscene" to="." method="_on_cutscene_animation_finished"]
